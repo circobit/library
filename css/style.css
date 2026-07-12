@@ -62,4 +62,20 @@ body {
 	gap: 2rem;
 	margin: auto;
 }
+
+/* Header */
+
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#titleText {
+	color: white;
+}
+
+#titleCopy {
+	color: grey;
+}
+
 }

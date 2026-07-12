@@ -48,3 +48,8 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+/* Container (Stack header, metrics and books list) */
+
+body {
+	background-color: rgb(32, 32, 32);
+}

@@ -141,7 +141,7 @@ input {
 
 .metrics {
 	display: grid;
-	gap: clamp(0.5rem, 3vw, 2rem);
+	gap: clamp(0.5rem, 2vw, 1rem);
 	grid-template-columns: repeat(3, 1fr);
 }
 

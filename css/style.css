@@ -97,4 +97,27 @@ body {
 	color: grey;
 }
 
+/* Metrics */
+
+.metrics {
+	display: grid;
+	gap: clamp(0.5rem, 3vw, 2rem);
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.metrics div {
+	border: 1px solid rgb(163, 162, 162);
+	border-radius: 10px;
+	padding: clamp(0.5rem, 3vw, 2rem);
+}
+
+.metricTitle {
+	color: grey;
+	font-size: clamp(0.7rem, 0.8rem + 1.5vw, 1.5rem);
+}
+
+.metricValue {
+	font-size: clamp(1rem, 2rem + 1.5vw, 3rem);
+	line-height: 1;
+	color: white;
 }

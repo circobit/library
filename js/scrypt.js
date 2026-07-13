@@ -139,3 +139,13 @@ function renderBookCard(book) {
 		isRead.style.color = "rgb(163, 162, 162)";
 	};
 };
+
+
+// Add sample books
+
+sampleBooks.forEach(addBookToLibrary);
+
+
+// Render books cards
+
+library.forEach((book) => renderBookCard(book));

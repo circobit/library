@@ -164,4 +164,24 @@ input {
 }
 
 
+/* Books List */
+
+#booksList {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+	#booksList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	#booksList {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
 }

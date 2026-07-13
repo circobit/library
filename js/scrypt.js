@@ -40,7 +40,11 @@ const sampleBooks = [
   },
 ];
 
-function Book(title, nameAuthor, surnameAuthor, pages, read = false) {
+// Book constructor
+// The process of indicating the parameters the functions needs
+// to look for is called 'destructuring'. Whenever an object is passed
+// to the function, it will look for those parameters.
+function Book({title, nameAuthor, surnameAuthor, pages, read = false}) {
 	this.id = crypto.randomUUID();
 	this.title = title;
 	this.nameAuthor = nameAuthor;

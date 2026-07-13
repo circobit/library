@@ -1,0 +1,3 @@
+// Library Array
+
+const library = [];

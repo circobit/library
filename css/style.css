@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+
 /* Fonts */
 
 @font-face {
@@ -66,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-display: swap;
 }
 
+
 /* Container (Stack header, metrics and books list) */
 
 body {
@@ -81,6 +83,7 @@ body {
 	gap: 2rem;
 	margin: auto;
 }
+
 
 /* Header */
 
@@ -119,6 +122,20 @@ body {
 	background-color: rgb(234, 234, 234);
 	border: solid rgb(234, 234, 234);
 }
+
+
+/* Input */
+
+input {
+	background-color: rgb(53, 52, 52);
+	border: 1px solid rgb(163, 162, 162);
+	border-radius: 8px;
+	padding-left: 1rem;
+	height: clamp(1rem, 2rem + 1.5vw, 3rem);
+	color: white;
+	font-size: clamp(0.5rem, 0.7rem + 1.5vw, 1.2rem);
+}
+
 
 /* Metrics */
 

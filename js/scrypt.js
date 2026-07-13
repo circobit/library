@@ -2,7 +2,43 @@
 
 const library = [];
 
-// Book constructor
+const sampleBooks = [
+  {
+    title: "One Hundred Years of Solitude",
+    nameAuthor: "Gabriel",
+    surnameAuthor: "García Márquez",
+    pages: 471,
+    read: true,
+  },
+  {
+    title: "The Shadow of the Wind",
+    nameAuthor: "Carlos",
+    surnameAuthor: "Ruiz Zafón",
+    pages: 576,
+    read: true,
+  },
+  {
+    title: "Hopscotch",
+    nameAuthor: "Julio",
+    surnameAuthor: "Cortázar",
+    pages: 736,
+    read: false,
+  },
+  {
+    title: "Pedro Páramo",
+    nameAuthor: "Juan",
+    surnameAuthor: "Rulfo",
+    pages: 124,
+    read: true,
+  },
+  {
+    title: "Fictions",
+    nameAuthor: "Jorge Luis",
+    surnameAuthor: "Borges",
+    pages: 174,
+    read: false,
+  },
+];
 
 function Book(title, nameAuthor, surnameAuthor, pages, read = false) {
 	this.id = crypto.randomUUID();

@@ -79,7 +79,7 @@ body {
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
-	max-width: 70rem;
+	max-width: 65rem;
 	gap: 2rem;
 	margin: auto;
 }

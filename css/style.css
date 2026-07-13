@@ -154,11 +154,11 @@ input {
 
 .metricTitle {
 	color: grey;
-	font-size: clamp(0.7rem, 0.8rem + 1.5vw, 1.5rem);
+	font-size: clamp(0.7rem, 0.8rem + 1.5vw, 1rem);
 }
 
 .metricValue {
-	font-size: clamp(1rem, 2rem + 1.5vw, 3rem);
+	font-size: clamp(1rem, 2rem + 1.5vw, 2rem);
 	line-height: 1;
 	color: white;
 }

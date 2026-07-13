@@ -53,11 +53,12 @@ function Book({title, nameAuthor, surnameAuthor, pages, read = false}) {
 	this.read = read;
 };
 
+
 // Function to add books
 
-function addBookToLibrary(title, nameAuthor, surnameAuthor, pages, read) {
+function addBookToLibrary(bookObj) {
 	// Instantiate Book object
-	const bookToAdd = new Book(title, nameAuthor, surnameAuthor, pages, read);
+	const bookToAdd = new Book(bookObj);
 	// Push Book to library array
 	library.push(bookToAdd);
 };

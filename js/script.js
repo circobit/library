@@ -146,4 +146,14 @@ sampleBooks.forEach(addBookToLibrary);
 
 
 // Render books cards
-library.forEach((book) => renderBookCard(book));
+
+function renderAll() {
+	// Get booksList div
+	const booksList = document.getElementById("booksList");
+	// Delete booksList content to re-render everything
+	booksList.innerHTML = "";
+	// Re-render from latest state of library
+	library.forEach((book) => renderBookCard(book));
+}
+
+renderAll();

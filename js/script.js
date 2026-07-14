@@ -68,7 +68,7 @@ function addBookToLibrary(bookObj) {
 
 function deleteBook(id) {
 	// Get index of book in the library array
-	const bookIndex = library.findIndex(element => element.id == id);
+	const bookIndex = library.findIndex(element => element.id === id);
 	// Use splice to remove element from library array
 	library.splice(bookIndex, 1);
 	// Re-render DOM

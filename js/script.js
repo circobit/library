@@ -41,9 +41,9 @@ const sampleBooks = [
 ];
 
 // Book constructor
-// The process of indicating the parameters the functions needs
-// to look for is called 'destructuring'. Whenever an object is passed
-// to the function, it will look for those parameters.
+// The process of indicating the parameters the function needs
+// to look for, is called 'destructuring'. Whenever an object is passed
+// to the function, it will look for those attributes.
 function Book({title, nameAuthor, surnameAuthor, pages, read = false}) {
 	this.id = crypto.randomUUID();
 	this.title = title;
@@ -70,8 +70,6 @@ function renderBookCard(book) {
 	//=== Create elements ===//
 	// Get booksList div
 	const booksList = document.getElementById("booksList");
-	console.log(typeof booksList);
-	console.log(booksList);
 	// Add bookCard
 	const bookCard = document.createElement("div");
 	bookCard.className = "bookCard";
@@ -121,6 +119,8 @@ function renderBookCard(book) {
 	bookTitle.textContent = book.title;
 	bookAuthor.textContent = book.nameAuthor + " " + book.surnameAuthor;
 	bookPages.textContent = book.pages + " pages";
+	//=== Set data attribute (id) in bookCard ===//
+	bookCard.dataset.id = book.id;
 	if (book.read === true) {
 		isRead.textContent = "Read";
 		buttonRead.textContent = "Mark as unread"
@@ -142,10 +142,8 @@ function renderBookCard(book) {
 
 
 // Add sample books
-
 sampleBooks.forEach(addBookToLibrary);
 
 
 // Render books cards
-
 library.forEach((book) => renderBookCard(book));

@@ -26,19 +26,27 @@
 			<form method="dialog">
 				<div class="inputPair">
 					<label for="bookTitle">Book Title:</label>
-					<input type="text" id="bookTitle" name="bookTitle" placeholder="Bad Girls">
+					<input type="text" id="bookTitle" name="bookTitle" placeholder="Bad Girls" required>
 				</div>
 				<div class="inputPair">
 					<label for="firstName">Author name:</label>
-					<input type="text" id="firstName" name="firstName" placeholder="Camila">
+					<input type="text" id="firstName" name="firstName" placeholder="Camila" required>
 				</div>
 				<div class="inputPair">
 					<label for="lastName">Author lastname:</label>
-					<input type="text" id="lastName" name="lastName" placeholder="Sosa Villada">
+					<input type="text" id="lastName" name="lastName" placeholder="Sosa Villada" required>
 				</div>
 				<div class="inputPair">
 					<label for="pages">Pages:</label>
-					<input type="text" id="pages" name="pages" placeholder="317">
+					<input type="text" id="pages" name="pages" placeholder="317" required>
+				</div>
+				<div class="inputPair">
+					<label for="isRead">Is it read?</label>
+					<select name="isRead" id="isRead" required>
+						<option value="">Please pick an option</option>
+						<option value=true>Read</option>
+						<option value=false>Pending</option>
+					</select>
 				</div>
 				<button id="addBookBtn">Add Book</button>
 			</form>

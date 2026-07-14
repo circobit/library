@@ -52,6 +52,13 @@ function Book({title, nameAuthor, surnameAuthor, pages, read = false}) {
 	this.pages = pages;
 	this.read = read;
 };
+// Add toggleRead method to the Book prototype (The parent object).
+// This way, all the Book objects have that method in one place
+// instead of replicating the same function for every object.
+Book.prototype.toggleRead = function() {
+	// Invert value of 'read' attribute within the Book object
+	this.read = !this.read;
+};
 
 
 // Function to add books
@@ -72,6 +79,14 @@ function deleteBook(id) {
 	// Use splice to remove element from library array
 	library.splice(bookIndex, 1);
 	// Re-render DOM
+	renderAll();
+};
+
+
+// Function to change read state in Book object and re-render DOM
+
+function changeReadState(book) {
+	book.toggleRead();
 	renderAll();
 };
 
@@ -127,6 +142,8 @@ function renderBookCard(book) {
 	buttonDelete.className = "deleteButton";
 	buttonDelete.textContent = "Delete";
 	bookCardBottom.appendChild(buttonDelete);
+	// Add eventListener to buttonRead
+	buttonRead.addEventListener('click', () => changeReadState(book));
 	// Add eventListener to buttonDelete
 	buttonDelete.addEventListener('click', () => deleteBook(book.id));
 	//=== Populate elements with text ===//

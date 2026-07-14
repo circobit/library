@@ -114,6 +114,7 @@ body {
 	background-color: rgb(163, 162, 162);
 	font-weight: bold;
 	font-size: clamp(0.6rem, 0.7rem + 1.5vw, 1.5rem);
+	color: black;
 }
 
 #newBookBtn:hover,

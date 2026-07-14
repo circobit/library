@@ -1,6 +1,6 @@
 // Library Array
 
-let library = [];
+const library = [];
 
 const sampleBooks = [
   {

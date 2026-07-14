@@ -142,6 +142,13 @@ function submitNewBook(event) {
 	bookForm.reset();
 };
 
+
+// Add eventListener to '#newBookPopover form' to submit a new book
+
+const bookForm = document.querySelector("#newBookPopover form");
+bookForm.addEventListener('submit', submitNewBook);
+
+
 // Function to add book card
 
 function renderBookCard(book) {

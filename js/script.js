@@ -1,6 +1,6 @@
 // Library Array
 
-const library = [];
+let library = [];
 
 const sampleBooks = [
   {
@@ -64,6 +64,18 @@ function addBookToLibrary(bookObj) {
 };
 
 
+// Function to delete book from the library array
+
+function deleteBook(id) {
+	// Get index of book in the library array
+	const bookIndex = library.findIndex(element => element.id == id);
+	// Use splice to remove element from library array
+	library.splice(bookIndex, 1);
+	// Re-render DOM
+	renderAll();
+};
+
+
 // Function to add book card
 
 function renderBookCard(book) {
@@ -115,6 +127,8 @@ function renderBookCard(book) {
 	buttonDelete.className = "deleteButton";
 	buttonDelete.textContent = "Delete";
 	bookCardBottom.appendChild(buttonDelete);
+	// Add eventListener to buttonDelete
+	buttonDelete.addEventListener('click', () => deleteBook(book.id));
 	//=== Populate elements with text ===//
 	bookTitle.textContent = book.title;
 	bookAuthor.textContent = book.nameAuthor + " " + book.surnameAuthor;

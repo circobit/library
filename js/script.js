@@ -122,6 +122,26 @@ function calculateMetrics() {
 };
 
 
+// Function to submit new book
+
+function submitNewBook(event) {
+	// Get values from inputs
+	const title = document.getElementById("bookTitle").value;
+	const nameAuthor = document.getElementById("firstName").value;
+	const surnameAuthor = document.getElementById("lastName").value;
+	const pages = Number(document.getElementById("pages").value);
+	const read = document.getElementById("isRead").value === "true";
+	// Add object to array
+	const bookObj = {title, nameAuthor, surnameAuthor, pages, read};
+	console.log(bookObj);
+	addBookToLibrary(bookObj);
+	// Re-render DOM
+	renderAll();
+	// Reset fields
+	const bookForm = document.querySelector("#newBookPopover form");
+	bookForm.reset();
+};
+
 // Function to add book card
 
 function renderBookCard(book) {

@@ -1,7 +1,12 @@
 // Library Array
-
 const library = [];
 
+// Counters of metrics
+let totalBooks = 0;
+let totalBooksRead = 0;
+let totalBooksPending = 0;
+
+// Sample books
 const sampleBooks = [
   {
     title: "One Hundred Years of Solitude",
@@ -91,6 +96,32 @@ function changeReadState(book) {
 };
 
 
+// Function to count and render metrics
+
+function calculateMetrics() {
+	// Reset counters
+	totalBooks = 0;
+	totalBooksRead = 0;
+	totalBooksPending = 0;
+	// Count metrics
+	for (let book of library) {
+		if (book.read === true) {
+			totalBooksRead++;
+		} else {
+			totalBooksPending++;
+		};
+		totalBooks++;
+	};
+	// Render metrics
+	const totalMetricValue = document.getElementById("totalMetricValue");
+	totalMetricValue.textContent = totalBooks;
+	const readMetricValue = document.getElementById("readMetricValue");
+	readMetricValue.textContent = totalBooksRead;
+	const pendingMetricValue = document.getElementById("pendingMetricValue");
+	pendingMetricValue.textContent = totalBooksPending;
+};
+
+
 // Function to add book card
 
 function renderBookCard(book) {
@@ -154,15 +185,15 @@ function renderBookCard(book) {
 	bookCard.dataset.id = book.id;
 	if (book.read === true) {
 		isRead.textContent = "Read";
-		buttonRead.textContent = "Mark as unread"
+		buttonRead.textContent = "Mark as unread";
 		isRead.style.padding = "0.05rem 0.4rem";
 		isRead.style.backgroundColor = "rgb(5, 41, 5)";
 		isRead.style.border = "solid rgb(5, 41, 5)";
 		isRead.style.borderRadius = "20px";
 		isRead.style.color = "rgb(68, 164, 49)";
 	} else {
-		isRead.textContent = "Pending"
-		buttonRead.textContent = "Mark as read"
+		isRead.textContent = "Pending";
+		buttonRead.textContent = "Mark as read";
 		isRead.style.padding = "0.05rem 0.4rem";
 		isRead.style.backgroundColor = "rgb(28, 28, 28)";
 		isRead.style.border = "solid rgb(28, 28, 28)";
@@ -185,6 +216,8 @@ function renderAll() {
 	booksList.innerHTML = "";
 	// Re-render from latest state of library
 	library.forEach((book) => renderBookCard(book));
+	// Calculate and render metrics
+	calculateMetrics();
 }
 
 renderAll();

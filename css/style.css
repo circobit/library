@@ -118,9 +118,9 @@ body {
 
 #newBookBtn:hover,
 #newBookBtn:active {
-	cursor: pointer;
 	background-color: rgb(234, 234, 234);
 	border: solid rgb(234, 234, 234);
+	cursor: pointer;
 }
 
 
@@ -258,4 +258,80 @@ hr {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+}
+
+
+/*=== New Book Dialog ===*/
+
+dialog {
+	border: 1px solid rgb(163, 162, 162);
+	border-radius: 10px;
+	background-color: rgb(44, 43, 43);
+	padding: clamp(0.5rem, 2vw, 1rem);
+	color: white;
+	padding: 2rem;
+}
+
+dialog[open] {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.formTitleAndCloseButton {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: bold;
+}
+
+.formTitleAndCloseButton button {
+	background-color: rgb(44, 43, 43);
+	border: 1px solid rgb(163, 162, 162);
+	border-radius: 10px;
+	color: white;
+	padding: 0.2rem 0.7rem;
+}
+
+.formTitleAndCloseButton button:hover,
+.formTitleAndCloseButton button:active {
+	background-color: rgb(145, 145, 146);
+	color: black;
+	cursor: pointer;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.inputPair {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Size of "Add Book" button */
+
+#addBookBtn {
+	flex-shrink: 0;
+	padding: 0.5rem 1rem;
+	border: solid rgb(163, 162, 162);
+	border-radius: 10px;
+	background-color: rgb(163, 162, 162);
+	font-weight: bold;
+	font-size: clamp(0.5rem, 0.6rem + 1.5vw, 1rem);
+}
+
+#addBookBtn:hover,
+#addBookBtn:active {
+	background-color: rgb(234, 234, 234);
+	border: solid rgb(234, 234, 234);
+	cursor: pointer;
+}
+
+/* Blur background while dialog is open */
+
+dialog::backdrop {
+        backdrop-filter: blur(1px);
 }

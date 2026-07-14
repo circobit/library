@@ -15,8 +15,34 @@
 				<p id="titleText">Library</p>
 				<p id="titleCopy">Tracking my readings</p>
 			</div>
-			<button id="newBookBtn">+ New Book</button>
+			<button id="newBookBtn" popovertarget="newBookPopover" onclick="newBookPopover.showModal()">+ New Book</button>
 		</div>
+
+		<dialog id="newBookPopover" popover>
+			<div class="formTitleAndCloseButton">
+				<p id="formTitle"></p>
+				<button popovertarget="newBookPopover" popovertargetaction="hide" onclick="newBookPopover.close()">Close</button>
+			</div>
+			<form method="dialog">
+				<div class="inputPair">
+					<label for="bookTitle">Book Title:</label>
+					<input type="text" id="bookTitle" name="bookTitle" placeholder="Bad Girls">
+				</div>
+				<div class="inputPair">
+					<label for="firstName">Author name:</label>
+					<input type="text" id="firstName" name="firstName" placeholder="Camila">
+				</div>
+				<div class="inputPair">
+					<label for="lastName">Author lastname:</label>
+					<input type="text" id="lastName" name="lastName" placeholder="Sosa Villada">
+				</div>
+				<div class="inputPair">
+					<label for="pages">Pages:</label>
+					<input type="text" id="pages" name="pages" placeholder="317">
+				</div>
+				<button id="addBookBtn">Add Book</button>
+			</form>
+		</dialog>
 
 		<input placeholder="Search by Title or Author...">
 

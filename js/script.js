@@ -45,24 +45,27 @@ const sampleBooks = [
   },
 ];
 
-// Book constructor
-// The process of indicating the parameters the function needs
-// to look for, is called 'destructuring'. Whenever an object is passed
+
+// Book class
+// The process of indicating the parameters the class constructor needs
+// to look for from an object, is called 'destructuring'. Whenever an object is passed
 // to the function, it will look for those attributes.
-function Book({title, nameAuthor, surnameAuthor, pages, read = false}) {
-	this.id = crypto.randomUUID();
-	this.title = title;
-	this.nameAuthor = nameAuthor;
-	this.surnameAuthor = surnameAuthor;
-	this.pages = pages;
-	this.read = read;
-};
-// Add toggleRead method to the Book prototype (The parent object).
-// This way, all the Book objects have that method in one place
-// instead of replicating the same function for every object.
-Book.prototype.toggleRead = function() {
-	// Invert value of 'read' attribute within the Book object
-	this.read = !this.read;
+class Book {
+	constructor ({title, nameAuthor, surnameAuthor, pages, read = false}) {
+		this.id = crypto.randomUUID();
+		this.title = title;
+		this.nameAuthor = nameAuthor;
+		this.surnameAuthor = surnameAuthor;
+		this.pages = pages;
+		this.read = read;
+	}
+
+	// Add toggleRead method to the Book class (The parent object).
+	// This way, all the Book objects have that method in one place
+	// instead of replicating the same function for every object.
+	toggleRead() {
+		this.read = !this.read;
+	}
 };
 
 
